@@ -1,7 +1,12 @@
 function ConfirmedBooking() {
 
     return (
-        <h1>Your reservation has been confirmed we are waiting</h1>
+        <>
+            <section className="confirmation">
+                <h1>Your reservation has been confirmed</h1>
+            </section>
+        </>
+        
     )
 
 

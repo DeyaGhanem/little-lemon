@@ -7,6 +7,8 @@ function BookingForm({ availableTimes, dispatch, submitForm}) {
     const [number, setNumber] = useState(1);
     const [ocassion, setOcassion] = useState('');  
 
+const isFormValid = date !== '' && time !== '' && number >= 1 && number <= 10 && ocassion !== '' ;
+
 const handleSubmit = (e) => {
     e.preventDefault();
     const formData = {
@@ -28,6 +30,11 @@ if(success) {
 
 }
 
+const validate = (e) => {
+    e.preventDefault();
+    
+}
+
 
 
     return(
@@ -38,8 +45,8 @@ if(success) {
                 <div className='names'>
                     <label htmlFor="first-name">First Name</label>
                     <label htmlFor="last-name">Last Name</label>
-                    <input type='text' id='first-name' aria-required="true"></input>
-                    <input type="text" id="last-name" aria-required="true"></input>
+                    <input type='text' id='first-name' aria-required="true" required></input>
+                    <input type="text" id="last-name" aria-required="true" required></input>
                 </div>
                 <label htmlFor="res-date">Choose a date</label>
                 <input 
@@ -52,6 +59,7 @@ if(success) {
                     dispatch({type: 'UPDATE_TIMES', payload: new Date(selectedDate)})
                 }}
                 aria-required="true" 
+                required
                  />
                 <label htmlFor="res-time">Choose time</label>
                 <select 
@@ -88,7 +96,7 @@ if(success) {
                         <option>Birthday</option>
                         <option>Anniversary</option>
                  </select>
-                <input id='submit' type="submit" value="Make Your reservation" />
+                <input id='submit' type="submit" value="Make Your reservation" disabled={!isFormValid} />
 
             </form>
         </div>

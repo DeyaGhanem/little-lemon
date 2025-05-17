@@ -17,9 +17,9 @@ function App() {
 
   const [availableTimes, dispatch] = useReducer(updateTimes, [], initializeTimes)
   return (
-    <>
-        <Nav />
-      
+    <div className='page-container'>
+      <main className='content-wrap'>
+ <Nav />
       <Routes> 
         <Route path="/" element={
           <>
@@ -37,8 +37,10 @@ function App() {
         } />
         <Route path="/confirmation" element={<ConfirmedBooking />} />
         </Routes>
+      </main>
+       
   <Footer />
-    </>
+    </div>
   );
 }
 
