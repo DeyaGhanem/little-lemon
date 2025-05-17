@@ -12,12 +12,12 @@ function Footer() {
                 <div className='Doormat'>
                     <h3>Doormat Navigation</h3>
                     <ul>
-                        <li><Link smooth to="#home">Home</Link></li>
+                        <li><Link smooth to="/#home">Home</Link></li>
                                <li>  <Link smooth to="/#about">About</Link></li>
-                                <li> <Link smooth to="Menu">Menu</Link></li>
-                                <li> <Link smooth to="#Reservations">Reservations</Link> </li>
-                                <li> <Link smooth to="#order-online">Order Online</Link></li>
-                                <li> <Link smooth to="Login">Login</Link></li>
+                                <li>  <Link smooth to="/#Menu">Menu</Link></li>
+                                <li> <Link to="/booking">Reservations</Link>  </li>
+                                <li> <Link smooth to="/#order-online">Order Online</Link></li>
+                                <li> <Link to="Login">Login</Link></li>
                     </ul>
                 </div>
                 <div>
